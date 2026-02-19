@@ -13,7 +13,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #F2E7E3; /* cream beige */
+  background: #F2E7E3;
   color: #2A2220;
 }
 
@@ -22,92 +22,115 @@ body {
   position: sticky;
   top: 0;
   background: #F2E7E3;
-  text-align: center;
-  padding: 32px 10px 18px;
+  padding: 28px 16px 16px;
   z-index: 100;
-  transition: padding 0.35s ease;
-  animation: bannerFade 0.8s ease;
+  transition: all .35s ease;
 }
 
-/* Logo */
+/* top logo area */
+.top-logo {
+  text-align: center;
+  transition: all .35s ease;
+}
+
 .logo {
   width: 54px;
-  margin-bottom: 12px;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  margin-bottom: 10px;
 }
 
-/* Hide logo on scroll */
-.header.compact .logo {
-  opacity: 0;
-  transform: translateY(-12px);
+/* hide logo when compact */
+.header.compact .top-logo {
   height: 0;
-  margin: 0;
+  overflow: hidden;
+  opacity: 0;
 }
 
-/* Brand */
+/* bar with name + icons */
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .brand {
   font-size: 16px;
   letter-spacing: 4px;
   font-weight: 500;
 }
 
-/* subtle separation */
-.divider {
-  height: 24px;
+/* right icons */
+.icons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* search underline */
+.search {
+  border-bottom: 2px solid #2A2220;
+  padding-bottom: 4px;
+  font-size: 14px;
 }
 
 /* ===== GALLERY ===== */
 .gallery {
   column-count: 2;
   column-gap: 22px;
-  padding: 0 18px 50px;
+  padding: 16px 18px 60px;
 }
 
-/* ===== CARD ===== */
 .card {
   break-inside: avoid;
   margin-bottom: 34px;
   text-align: center;
 }
 
-/* Image */
 .card img {
   width: 100%;
   border-radius: 26px;
   display: block;
+  cursor: pointer;
+  transition: transform .25s ease;
 }
 
-/* Product name */
+.card img:active {
+  transform: scale(.97);
+}
+
 .name {
   margin-top: 16px;
   font-family: 'Playfair Display', serif;
   font-size: 13px;
   letter-spacing: 1px;
-  opacity: 0.9;
 }
 
-/* Action row */
+/* ===== BUTTON ROW ===== */
 .action-row {
   margin-top: 12px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-/* Add to cart button */
+/* price button */
 .checkout {
   background: #C98E86;
   border: none;
   color: white;
-  padding: 12px 24px;
+  padding: 12px 20px;
   font-size: 12px;
   letter-spacing: 2px;
   border-radius: 40px;
   cursor: pointer;
+  transition: transform .15s ease;
 }
 
-/* Instagram-style heart */
+.checkout:active {
+  transform: scale(.96);
+}
+
+/* heart */
 .heart svg {
   width: 20px;
   height: 20px;
@@ -115,18 +138,46 @@ body {
   stroke-width: 2;
   fill: none;
   cursor: pointer;
+  transition: transform .25s ease, fill .25s ease;
 }
 
-/* ===== ANIMATION ===== */
-@keyframes bannerFade {
-  from {
-    opacity: 0;
-    transform: translateY(-12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.heart.active svg {
+  fill: #FF6B81;
+  stroke: #FF6B81;
+  transform: scale(1.2);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 </style>
@@ -136,70 +187,87 @@ body {
 <!-- ===== HEADER ===== -->
 <div class="header" id="header">
 
-  <!-- LOGO -->
-  <img src="logo.png" class="logo" alt="Logo">
+  <div class="top-logo">
+    <img src="logo.png" class="logo">
+  </div>
 
-  <!-- BRAND NAME -->
-  <div class="brand">SUCYHAIRS4QUEENS</div>
+  <div class="bar">
+    <div class="brand">SUCYHAIRS4QUEENS</div>
+
+    <div class="icons">
+      <div class="search">🔍 SEARCH</div>
+      🤍
+      👜
+    </div>
+  </div>
 
 </div>
-
-<div class="divider"></div>
 
 <!-- ===== GALLERY ===== -->
 <div class="gallery">
 
-  <div class="card">
-    <img src="wig1.jpg">
-    <div class="name">Premium Wig 1</div>
-    <div class="action-row">
-      <button class="checkout">ADD TO CART</button>
-      <div class="heart">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/>
-        </svg>
+  <!-- CARD TEMPLATE -->
+  <script>
+    const wigs = 10;
+    for (let i = 1; i <= wigs; i++) {
+      document.write(`
+      <div class="card">
+        <img src="wig${i}.jpg" onclick="openModal(this.src)">
+        <div class="name">Premium Wig ${i}</div>
+        <div class="action-row">
+          <button class="checkout">R3,499  ADD TO CART</button>
+          <div class="heart" onclick="toggleHeart(this)">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/>
+            </svg>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <div class="card"><img src="wig2.jpg"><div class="name">Premium Wig 2</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig3.jpg"><div class="name">Premium Wig 3</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig4.jpg"><div class="name">Premium Wig 4</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig5.jpg"><div class="name">Premium Wig 5</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig6.jpg"><div class="name">Premium Wig 6</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig7.jpg"><div class="name">Premium Wig 7</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig8.jpg"><div class="name">Premium Wig 8</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig9.jpg"><div class="name">Premium Wig 9</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
-
-  <div class="card"><img src="wig10.jpg"><div class="name">Premium Wig 10</div><div class="action-row"><button class="checkout">ADD TO CART</button><div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/></svg></div></div></div>
+      `);
+    }
+  </script>
 
 </div>
 
-<script>
-const header = document.getElementById('header');
+<!-- ===== MODAL ===== -->
+<div class="modal" id="modal">
+  <div class="close" onclick="closeModal()">✕</div>
+  <img id="modalImg">
+</div>
 
-let lastScroll = 0;
+<script>
+
+/* ===== HEADER SCROLL FIX ===== */
+const header = document.getElementById('header');
+let lastY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  const current = window.scrollY;
+  const y = window.scrollY;
 
-  if (current > lastScroll && current > 50) {
-    // scrolling down
+  if (y > lastY && y > 80) {
     header.classList.add('compact');
   } else {
-    // scrolling up
     header.classList.remove('compact');
   }
 
-  lastScroll = current;
+  lastY = y;
 });
+
+/* ===== MODAL ===== */
+function openModal(src) {
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('modalImg').src = src;
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+}
+
+/* ===== WISHLIST ===== */
+function toggleHeart(el) {
+  el.classList.toggle('active');
+}
+
 </script>
 
 </body>
