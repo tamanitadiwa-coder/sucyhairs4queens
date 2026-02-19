@@ -13,74 +13,93 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #000;
-  color: #111;
+  background: #3A2F2C; /* dark beige pinkish */
+  color: #fff;
 }
 
-/* ===== FENTY-STYLE HEADER ===== */
+/* ===== HEADER ===== */
 .header {
-  background: #EDEBEA;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 20px;
+  background: #3A2F2C;
+  text-align: center;
+  padding: 20px 10px 10px;
 }
 
-/* Brand */
 .brand {
-  font-size: 20px;
-  letter-spacing: 8px;
-  font-weight: 500;
-  color: #000;
-}
-
-/* Icons */
-.header-icons {
-  display: flex;
-  gap: 22px;
-  font-size: 22px;
-  color: #000;
-}
-
-/* ===== GRID ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  padding: 8px;
-}
-
-/* ===== TILE ===== */
-.tile {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.tile img {
-  width: 100%;
-  display: block;
-  border-radius: 18px;
-}
-
-/* ===== FLOATING ICONS ===== */
-.icon-left,
-.icon-right {
-  position: absolute;
-  bottom: 10px;
-  width: 32px;
-  height: 32px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
   font-size: 16px;
+  letter-spacing: 4px;
+  font-weight: 500;
 }
 
-.icon-left { left: 10px; }
-.icon-right { right: 10px; }
+/* ===== MASONRY / BRICK LAYOUT ===== */
+.gallery {
+  column-count: 2;
+  column-gap: 22px;
+  padding: 10px 18px 40px;
+}
+
+/* ===== CARD ===== */
+.card {
+  break-inside: avoid;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  border-radius: 26px;
+  display: block;
+}
+
+/* Product name */
+.name {
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Button + heart row */
+.action-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Checkout button */
+.checkout {
+  background: #C98E86; /* dark peach pink */
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* Heart outline */
+.heart {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #fff;
+  transform: rotate(-45deg);
+  position: relative;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: 10px; top: 0; }
 
 </style>
 </head>
@@ -88,39 +107,101 @@ body {
 
 <!-- ===== HEADER ===== -->
 <div class="header">
-
   <div class="brand">SUCYHAIRS4QUEENS</div>
-
-  <div class="header-icons">
-    🔍
-    🛍️
-  </div>
-
 </div>
 
-<!-- ===== IMAGE GALLERY ===== -->
+<!-- ===== FLOATING BRICK GALLERY ===== -->
 <div class="gallery">
 
-  <div class="tile"><img src="wig1.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig2.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig3.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig4.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig5.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig6.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig7.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig8.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig9.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig10.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig11.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig12.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig13.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig14.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig15.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig16.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig17.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig18.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig19.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
-  <div class="tile"><img src="wig20.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="card">
+    <img src="wig1.jpg">
+    <div class="name">Premium Wig 1</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig2.jpg">
+    <div class="name">Premium Wig 2</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig3.jpg">
+    <div class="name">Premium Wig 3</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig4.jpg">
+    <div class="name">Premium Wig 4</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig5.jpg">
+    <div class="name">Premium Wig 5</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig6.jpg">
+    <div class="name">Premium Wig 6</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig7.jpg">
+    <div class="name">Premium Wig 7</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig8.jpg">
+    <div class="name">Premium Wig 8</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig9.jpg">
+    <div class="name">Premium Wig 9</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="wig10.jpg">
+    <div class="name">Premium Wig 10</div>
+    <div class="action-row">
+      <button class="checkout">CHECKOUT</button>
+      <div class="heart"></div>
+    </div>
+  </div>
 
 </div>
 
