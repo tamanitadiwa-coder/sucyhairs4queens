@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUCYHAIRS4QUEENS</title>
 
-<!-- Premium Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,169 +17,132 @@ body {
   color: #111;
 }
 
-/* ===== SMALL FLOATING HEADER ===== */
-.banner {
+/* ===== PROMO BAR ===== */
+.promo {
+  text-align: center;
+  font-size: 12px;
+  padding: 8px 0;
+  background: #EFE4DF;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #E7D8D1;
   position: sticky;
   top: 0;
-  background: rgba(231, 216, 209, 0.85);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  padding: 14px 10px 12px;
   z-index: 100;
 }
 
-.banner img {
-  width: 45px;
-  display: block;
-  margin: 0 auto 4px;
+/* Logo */
+.logo img {
+  height: 26px;
 }
 
-.brand-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 3px;
+/* Search */
+.search {
+  flex: 1;
+  margin: 0 14px;
+  font-size: 13px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  gap: 14px;
+  font-size: 18px;
 }
 
 /* ===== GRID ===== */
 .products {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  padding: 22px 14px 40px;
+  gap: 2px;
 }
 
-/* ===== FLOATING ITEM ===== */
+/* ===== PRODUCT ===== */
 .product {
   position: relative;
-  overflow: hidden;
-  border-radius: 2px;
 }
 
-/* Image */
 .product img {
   width: 100%;
-  height: auto;
   display: block;
-  transition: transform 0.5s ease;
 }
 
-.product:hover img {
-  transform: scale(1.03);
-}
-
-/* ===== FLOATING INFO OVERLAY ===== */
-.overlay {
+/* ===== FLOATING ICONS ON IMAGE ===== */
+.icon-left,
+.icon-right {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 16px 12px 14px;
-  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
-  color: white;
-}
-
-/* Name + price */
-.name {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  margin-bottom: 3px;
-}
-
-.price {
-  font-size: 13px;
-  opacity: 0.9;
-  margin-bottom: 10px;
-}
-
-/* ===== FLOATING BUTTONS ===== */
-.actions {
+  top: 10px;
+  font-size: 18px;
+  background: rgba(255,255,255,0.85);
+  width: 32px;
+  height: 32px;
   display: flex;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-button {
-  flex: 1;
-  background: rgba(0,0,0,0.8);
-  border: none;
-  color: white;
-  padding: 8px 0;
-  font-size: 11px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  background: rgba(0,0,0,1);
-}
-
-/* ===== SEARCH FLOAT BUTTON ===== */
-.search-bar {
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.search-bar button {
-  background: #000;
-  padding: 12px 26px;
-  border-radius: 40px;
-  font-size: 13px;
-}
-
-/* ===== SMOOTH FADE IN ===== */
-.products {
-  animation: fadeUp 0.6s ease;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.icon-left { left: 10px; }
+.icon-right { right: 10px; }
 
 </style>
 </head>
 <body>
 
-<!-- ===== FLOATING HEADER ===== -->
-<div class="banner">
-  <img src="logo.png" alt="Logo">
-  <div class="brand-name">SUCYHAIRS4QUEENS</div>
+<!-- ===== PROMO ===== -->
+<div class="promo">International Shipping Available</div>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <div class="search">🔍 SEARCH</div>
+
+  <div class="icons">
+    ⭐
+    🛍️
+    ☰
+  </div>
+
 </div>
 
-<!-- ===== PRODUCTS ===== -->
+<!-- ===== PRODUCTS GRID ===== -->
 <div class="products">
 
-<!-- ===== 20 FLOATING ITEMS ===== -->
+<!-- 20 ITEMS — IMAGE ONLY + ICONS -->
 
-<!-- Repeat pattern -->
-<div class="product"><img src="wig1.jpg"><div class="overlay"><div class="name">Premium Wig 1</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig2.jpg"><div class="overlay"><div class="name">Premium Wig 2</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig3.jpg"><div class="overlay"><div class="name">Premium Wig 3</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig4.jpg"><div class="overlay"><div class="name">Premium Wig 4</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig5.jpg"><div class="overlay"><div class="name">Premium Wig 5</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig6.jpg"><div class="overlay"><div class="name">Premium Wig 6</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig7.jpg"><div class="overlay"><div class="name">Premium Wig 7</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig8.jpg"><div class="overlay"><div class="name">Premium Wig 8</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig9.jpg"><div class="overlay"><div class="name">Premium Wig 9</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig10.jpg"><div class="overlay"><div class="name">Premium Wig 10</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig11.jpg"><div class="overlay"><div class="name">Premium Wig 11</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig12.jpg"><div class="overlay"><div class="name">Premium Wig 12</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig13.jpg"><div class="overlay"><div class="name">Premium Wig 13</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig14.jpg"><div class="overlay"><div class="name">Premium Wig 14</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig15.jpg"><div class="overlay"><div class="name">Premium Wig 15</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig16.jpg"><div class="overlay"><div class="name">Premium Wig 16</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig17.jpg"><div class="overlay"><div class="name">Premium Wig 17</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig18.jpg"><div class="overlay"><div class="name">Premium Wig 18</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig19.jpg"><div class="overlay"><div class="name">Premium Wig 19</div><div class="price">R3,499</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
-<div class="product"><img src="wig20.jpg"><div class="overlay"><div class="name">Premium Wig 20</div><div class="price">R3,299</div><div class="actions"><button>CHECKOUT</button><button>WISHLIST</button></div></div></div>
+<div class="product"><img src="wig1.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig2.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig3.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig4.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig5.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig6.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig7.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig8.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig9.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig10.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig11.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig12.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig13.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig14.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig15.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig16.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig17.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig18.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig19.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+<div class="product"><img src="wig20.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
 
-</div>
-
-<!-- ===== SEARCH FLOAT BUTTON ===== -->
-<div class="search-bar">
-  <button>SEARCH</button>
 </div>
 
 </body>
