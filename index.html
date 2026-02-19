@@ -55,33 +55,28 @@ body {
 
 /* bar */
 .bar {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-/* brand */
+/* brand centered */
 .brand {
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 4px;
   font-weight: 500;
+  text-align: center;
 }
 
-/* icons */
+/* icons top-right */
 .icons {
+  position: absolute;
+  right: 0;
+  top: 0;
   display: flex;
+  gap: 18px;
   align-items: center;
-  gap: 22px;
-}
-
-/* search */
-.search {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border-bottom: 2px solid #2A2220;
-  padding-bottom: 3px;
-  font-size: 13px;
 }
 
 /* svg icons */
@@ -91,6 +86,7 @@ body {
   stroke: #2A2220;
   stroke-width: 1.8;
   fill: none;
+  cursor: pointer;
 }
 
 /* ===== GALLERY ===== */
@@ -111,12 +107,6 @@ body {
   width: 100%;
   border-radius: 26px;
   display: block;
-  cursor: pointer;
-  transition: transform .25s ease;
-}
-
-.card img:active {
-  transform: scale(.97);
 }
 
 /* name */
@@ -173,39 +163,6 @@ body {
   transform: scale(1.15);
 }
 
-/* ===== MODAL ===== */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
-}
-
-.modal.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 18px;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
 </style>
 </head>
 <body>
@@ -223,14 +180,11 @@ body {
 
     <div class="icons">
 
-      <div class="search">
-        <!-- search icon -->
-        <svg class="icon" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="7"></circle>
-          <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-        </svg>
-        SEARCH
-      </div>
+      <!-- search icon -->
+      <svg class="icon" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+      </svg>
 
       <!-- heart outline -->
       <svg class="icon" viewBox="0 0 24 24">
@@ -244,6 +198,7 @@ body {
       </svg>
 
     </div>
+
   </div>
 
 </div>
@@ -255,7 +210,7 @@ body {
 for (let i = 1; i <= 10; i++) {
   document.write(`
   <div class="card">
-    <img src="wig${i}.jpg" onclick="openModal(this.src)">
+    <img src="wig${i}.jpg">
     <div class="name">Premium Wig ${i}</div>
     <div class="price">R3,499</div>
     <div class="action-row">
@@ -273,15 +228,9 @@ for (let i = 1; i <= 10; i++) {
 
 </div>
 
-<!-- ===== MODAL ===== -->
-<div class="modal" id="modal">
-  <div class="close" onclick="closeModal()">✕</div>
-  <img id="modalImg">
-</div>
-
 <script>
 
-/* ===== SMOOTH HEADER COLLAPSE (NO GLITCH) ===== */
+/* ===== SMOOTH HEADER COLLAPSE ===== */
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
@@ -291,16 +240,6 @@ window.addEventListener('scroll', () => {
     header.classList.remove('compact');
   }
 });
-
-/* ===== MODAL ===== */
-function openModal(src) {
-  document.getElementById('modal').classList.add('open');
-  document.getElementById('modalImg').src = src;
-}
-
-function closeModal() {
-  document.getElementById('modal').classList.remove('open');
-}
 
 /* ===== WISHLIST ===== */
 function toggleHeart(el) {
