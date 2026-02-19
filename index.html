@@ -13,81 +13,70 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #F2E7E3;
+  background: #000;
   color: #111;
 }
 
-/* ===== PROMO BAR ===== */
-.promo {
-  text-align: center;
-  font-size: 12px;
-  padding: 8px 0;
-  background: #EFE4DF;
-}
-
-/* ===== HEADER ===== */
+/* ===== FENTY-STYLE HEADER ===== */
 .header {
+  background: #EDEBEA;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 14px;
-  background: #E7D8D1;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 18px 20px;
 }
 
-/* Logo */
-.logo img {
-  height: 26px;
-}
-
-/* Search */
-.search {
-  flex: 1;
-  margin: 0 14px;
-  font-size: 13px;
-  border-bottom: 1px solid #000;
-  padding-bottom: 3px;
+/* Brand */
+.brand {
+  font-size: 20px;
+  letter-spacing: 8px;
+  font-weight: 500;
+  color: #000;
 }
 
 /* Icons */
-.icons {
+.header-icons {
   display: flex;
-  gap: 14px;
-  font-size: 18px;
+  gap: 22px;
+  font-size: 22px;
+  color: #000;
 }
 
 /* ===== GRID ===== */
-.products {
+.gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
+  gap: 8px;
+  padding: 8px;
 }
 
-/* ===== PRODUCT ===== */
-.product {
+/* ===== TILE ===== */
+.tile {
   position: relative;
+  border-radius: 18px;
+  overflow: hidden;
 }
 
-.product img {
+.tile img {
   width: 100%;
   display: block;
+  border-radius: 18px;
 }
 
-/* ===== FLOATING ICONS ON IMAGE ===== */
+/* ===== FLOATING ICONS ===== */
 .icon-left,
 .icon-right {
   position: absolute;
-  top: 10px;
-  font-size: 18px;
-  background: rgba(255,255,255,0.85);
+  bottom: 10px;
   width: 32px;
   height: 32px;
+  background: rgba(0,0,0,0.6);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  font-size: 16px;
 }
 
 .icon-left { left: 10px; }
@@ -97,51 +86,41 @@ body {
 </head>
 <body>
 
-<!-- ===== PROMO ===== -->
-<div class="promo">International Shipping Available</div>
-
 <!-- ===== HEADER ===== -->
 <div class="header">
 
-  <div class="logo">
-    <img src="logo.png" alt="Logo">
-  </div>
+  <div class="brand">SUCYHAIRS4QUEENS</div>
 
-  <div class="search">🔍 SEARCH</div>
-
-  <div class="icons">
-    ⭐
+  <div class="header-icons">
+    🔍
     🛍️
-    ☰
   </div>
 
 </div>
 
-<!-- ===== PRODUCTS GRID ===== -->
-<div class="products">
+<!-- ===== IMAGE GALLERY ===== -->
+<div class="gallery">
 
-<!-- 20 ITEMS — IMAGE ONLY + ICONS -->
-
-<div class="product"><img src="wig1.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig2.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig3.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig4.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig5.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig6.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig7.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig8.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig9.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig10.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig11.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig12.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig13.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig14.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig15.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig16.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig17.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig18.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig19.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
-<div class="product"><img src="wig20.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛍️</div></div>
+  <div class="tile"><img src="wig1.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig2.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig3.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig4.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig5.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig6.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig7.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig8.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig9.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig10.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig11.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig12.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig13.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig14.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig15.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig16.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig17.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig18.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig19.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
+  <div class="tile"><img src="wig20.jpg"><div class="icon-left">⭐</div><div class="icon-right">🛒</div></div>
 
 </div>
 
