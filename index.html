@@ -6,116 +6,146 @@
 <title>SUCYHAIRS4QUEENS</title>
 
 <style>
+
+/* ===== BODY ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #F7F7F7;
+  background: #F1E6E3; /* cream pinkish */
   color: #111;
+}
+
+/* ===== INSTAGRAM-STYLE BANNER ===== */
+.banner {
+  background: #E7D8D1; /* beige/nude */
   text-align: center;
+  padding: 25px 15px 20px;
 }
 
-/* Logo Header */
-.header {
-  padding: 40px 20px 10px;
-}
-
-.header img {
-  max-width: 220px;
+.banner img {
+  width: 70px; /* small logo */
   height: auto;
+  display: block;
+  margin: 0 auto 8px;
 }
 
-/* Tagline */
-.tagline {
+.brand-name {
   font-size: 18px;
-  margin-bottom: 40px;
-  color: #555;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
-/* Product Layout */
+/* ===== PRODUCT GRID ===== */
 .products {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  padding: 40px;
+  gap: 40px;
+  padding: 50px 20px;
   flex-wrap: wrap;
 }
 
-/* Product Card */
+/* ===== PRODUCT CARD ===== */
 .product {
-  background: white;
-  padding: 20px;
   width: 320px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
-}
-
-.product:hover {
-  transform: translateY(-5px);
 }
 
 .product img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
-.product h2 {
-  margin: 15px 0 5px;
-  font-weight: 600;
+/* ===== PRODUCT INFO ===== */
+.info {
+  background: white;
+  padding: 18px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 6px;
 }
 
 .price {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 15px;
-  font-weight: bold;
 }
 
-/* Premium Button */
+/* ===== BUTTONS ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
 button {
-  background: #6B4A3B;
+  flex: 1;
+  background: #000;
   color: white;
   border: none;
-  padding: 14px 28px;
-  font-size: 16px;
+  padding: 12px 0;
+  font-size: 13px;
   cursor: pointer;
   letter-spacing: 1px;
-  border-radius: 4px;
-  transition: background 0.2s ease;
 }
 
-button:hover {
-  background: #55382C;
+/* ===== SEARCH BAR ===== */
+.search-bar {
+  text-align: center;
+  padding: 15px 0 30px;
 }
+
+.search-bar button {
+  background: #000;
+  padding: 12px 40px;
+  font-size: 14px;
+}
+
 </style>
-
 </head>
 <body>
 
-<!-- LOGO -->
-<div class="header">
-  <img src="logo.png" alt="SUCYHAIRS4QUEENS Logo">
+<!-- ===== TOP BANNER ===== -->
+<div class="banner">
+  <img src="logo.png" alt="Logo">
+  <div class="brand-name">SUCYHAIRS4QUEENS</div>
 </div>
 
-<!-- TAGLINE -->
-<div class="tagline">Timeless Beauty • Premium Quality</div>
-
-<!-- PRODUCTS -->
+<!-- ===== PRODUCTS ===== -->
 <div class="products">
 
   <div class="product">
     <img src="https://via.placeholder.com/320x420" alt="Straight Wig">
-    <h2>Luxe Straight Wig</h2>
-    <div class="price">R3,499</div>
-    <button>CHECKOUT</button>
+
+    <div class="info">
+      <div class="name">Luxe Straight Wig</div>
+      <div class="price">R3,499</div>
+
+      <div class="actions">
+        <button>CHECKOUT</button>
+        <button>WISHLIST</button>
+      </div>
+    </div>
   </div>
 
   <div class="product">
     <img src="https://via.placeholder.com/320x420" alt="Curly Wig">
-    <h2>Luxe Curly Wig</h2>
-    <div class="price">R3,299</div>
-    <button>CHECKOUT</button>
+
+    <div class="info">
+      <div class="name">Luxe Curly Wig</div>
+      <div class="price">R3,299</div>
+
+      <div class="actions">
+        <button>CHECKOUT</button>
+        <button>WISHLIST</button>
+      </div>
+    </div>
   </div>
 
+</div>
+
+<!-- ===== SEARCH BUTTON ===== -->
+<div class="search-bar">
+  <button>SEARCH</button>
 </div>
 
 </body>
