@@ -39,10 +39,18 @@ body {
   transition: all .35s ease;
 }
 
+/* LOGO animation ONLY */
 .logo {
   width: 54px;
   margin-bottom: 14px;
-  transition: opacity .35s ease;
+  animation: logoFloat 2.8s ease-in-out infinite;
+}
+
+/* gentle premium float */
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
 /* hide logo smoothly */
@@ -69,14 +77,15 @@ body {
   text-align: center;
 }
 
-/* icons top-right */
+/* icons TOP RIGHT */
 .icons {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -6px;
   display: flex;
   gap: 18px;
   align-items: center;
+  padding-right: 6px; /* space for cart count */
 }
 
 /* svg icons */
@@ -184,11 +193,6 @@ body {
       <svg class="icon" viewBox="0 0 24 24">
         <circle cx="11" cy="11" r="7"></circle>
         <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-      </svg>
-
-      <!-- heart outline -->
-      <svg class="icon" viewBox="0 0 24 24">
-        <path d="M12 21s-7-4.6-9.5-8C.5 10 2 6.5 5.5 6.5 8 6.5 9.5 8 12 10.5 14.5 8 16 6.5 18.5 6.5 22 6.5 23.5 10 21.5 13c-2.5 3.4-9.5 8-9.5 8z"/>
       </svg>
 
       <!-- bag -->
